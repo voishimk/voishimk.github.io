@@ -1,8 +1,55 @@
+
 const usuarios = [
     { username: 'administrador1@duocuc.cl', password: 'admin', role: 'admin' },
     { username: 'josa.morales@duocuc.cl', password: '123456', role: 'alumno' },
     // Otros usuarios...
 ];
+
+//AGREGAR USUARIO
+function agregarUsuario() {
+    var username = document.getElementById('usernameR').value;
+    var password = document.getElementById('passwordR').value;
+    var role = 'alumno';
+    
+    // Crear un nuevo objeto de usuario
+    var nuevoUsuario = {
+      username: username,
+      password: password,
+      role: role
+    };
+
+    // Validar campos vacíos
+    if (username === '' || password === '') {
+        alert('Por favor, completa todos los campos.');
+        return;
+    }
+
+    // Validar formato del correo electrónico
+    if (!username.includes('@')) {
+        alert('Ingrese un correo válido.');
+        return;
+    }
+
+    // Agregar el nuevo usuario a la lista
+    usuarios.push(nuevoUsuario);
+
+    // Mostrar la lista actualizada en la consola
+    
+    console.log(usuarios);
+    
+    // Cerrar el modal
+    var modal = document.getElementById('registro-modal');
+    var bootstrapModal = bootstrap.Modal.getInstance(modal);
+    bootstrapModal.hide();
+
+    // Mostrar el mensaje de registro exitoso
+    var toastElement = document.getElementById('toastRegistro');
+    var bootstrapToast = new bootstrap.Toast(toastElement);
+    bootstrapToast.show();
+    
+}
+
+
 
 // Obtener el formulario de inicio de sesión y el contenedor de mensajes de error
 const loginForm = document.getElementById('login-form');

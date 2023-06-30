@@ -10,8 +10,12 @@
         body {
             background-image: url('./img/hogwarts-legacy-video-game-magical-character-wallpaper-3840x2160_54.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
+            background-position: center center;
+
         }
+
+
+
 
         .login-container {
             background-color: rgba(255, 255, 255, 0.9);
@@ -28,7 +32,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
                 <div class="login-container">
                     <h3 class="text-center mb-4">Iniciar sesión</h3>
                     <form id="login-form">
@@ -42,14 +46,78 @@
                             <input type="password" class="form-control" id="password"
                                 placeholder="Ingrese su contraseña" required>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        <div class="row text-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                                <button type="" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#registro-modal">Registrate</button>
+                            </div>
+
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="row">
+
+            <div class="modal fade modal-lg" id="registro-modal" tabindex="-1" aria-labelledby="vistaRapidaModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="vistaRapidaModalLabel">Registrarse</h5>
+                        </div>
+                        <div class="modal-body" id="curso-modal-content">
+                            
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Nombre</label>
+                                    <input required type="text" class="form-control" name="" aria-describedby="helpId"
+                                        placeholder="Ingresa tu nombre completo">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Carrera</label>
+                                    <input required type="text" class="form-control" name="" aria-describedby="helpId"
+                                        placeholder="Ingresa tu carrera">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Email</label>
+                                    <input required type="email" class="form-control" name="" id="usernameR"
+                                        aria-describedby="helpId" placeholder="Ingresa tu email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Contraseña</label>
+                                    <input required type="password" class="form-control" name="" id="passwordR"
+                                        aria-describedby="helpId" placeholder="Ingresa tu contraseña">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" onclick="agregarUsuario()">Registrarse</button>
+                                </div>
+                                
+                                
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="toastRegistro" class="toast " role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                    <div class="toast-header">
+                        <strong class="me-auto">Registro</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Registrado correctamente.
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
     </div>
+    
+    
+    
 
     <div id="login-error" class="text-danger fw-bold"></div>
 

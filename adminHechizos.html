@@ -15,8 +15,32 @@
 <body style="background-color: lightgray">
     <div id="header-container" style="border-bottom: solid #ff9000"></div>
 
-    <main>
-        <div class="container">
+    <aside class="col-md-2 mt-3 mb-3 d-flex row row-cols-1"
+        style="background-color: #fff; margin-left: 2%; margin-right: 2%; float: left;">
+        <div class="col" style="margin-left: 0%;">
+            <h2 class="mt-3" style="font-weight: bold;">FILTROS</h2>
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" value="" id="check1">
+                <label for="check1" class="form-check-label">Defensivo</label>
+            </div>
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" value="" id="check2">
+                <label for="check2" class="form-check-label">Ofensivos</label>
+            </div>
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" value="" id="check3">
+                <label for="check3" class="form-check-label">Furtivos</label>
+            </div>
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" value="" id="check4">
+                <label for="check4" class="form-check-label">Especiales</label>
+            </div>
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" value="" id="check5">
+                <label for="check5" class="form-check-label">Curativos</label>
+            </div>
+        </div>
+        <div>
             <div class="col">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#añadir-hechizo-modal">
@@ -113,8 +137,6 @@
             </div>
         </div>
     </div>
-    </main>
-    
 
 
     <div id="footer-container"></div>

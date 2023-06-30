@@ -52,7 +52,7 @@ function mostrarCurso(cursoId) {
         <p>${curso.descripcion}</p>
         <h6>Contenido del curso:</h6>
         ${generarUnidades(curso.unidades)}
-        <h6>Información adicional:</h6>
+        <h6>Información adicional:</h6>      
         <p>Aquí puedes agregar cualquier información adicional que desees mostrar sobre el curso.</p>
       `;
 
@@ -174,3 +174,23 @@ agregarCursoForm.addEventListener('submit', function (e) {
     // Restablece los valores del formulario
     agregarCursoForm.reset();
 });
+
+
+
+//funcion eliminar
+function eliminarCurso(cursoId) {
+    // Verificar si hay datos de cursos en el localStorage
+    if (localStorage.getItem('')) {
+      let cursosLocalStorage = JSON.parse(localStorage.getItem('cursos'));
+      
+      // Filtrar los cursos para eliminar el curso con el ID proporcionado
+      cursosLocalStorage = cursosLocalStorage.filter((curso) => curso.id !== cursoId);
+      
+      // Actualizar los datos en el localStorage
+      localStorage.setItem('cursos', JSON.stringify(cursosLocalStorage));
+      
+      // Generar nuevamente el contenido de los cursos para reflejar los cambios
+      generarCursos();
+    }
+  }
+  
